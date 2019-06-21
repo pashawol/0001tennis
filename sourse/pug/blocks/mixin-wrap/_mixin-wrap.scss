@@ -177,7 +177,7 @@
  	position: relative;
 	 z-index: 200;
 	 position: relative;
-	 overflow: hidden;
+	//  overflow: hidden;
 	 @include media-breakpoint-up(xl) {
 		 
 		 max-height: rem(68);
