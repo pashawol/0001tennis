@@ -1,0 +1,120 @@
+mixin icon(name,mod)
+	- mod = mod || ''
+	svg(class="icon icon-" + name + ' ' + mod)
+		use(xlink:href="img/svg/sprite.svg#" + name)
+
+
+
+mixin breadcrumb(...items)
+	nav.breadcrumb
+		-for (var i = 0; i < items.length - 1; i++)
+			a.breadcrumb-item(href='#')= items[i]
+		span.breadcrumb-item.active=  items[items.length - 1]
+
+		
+mixin pugin()
+	nav(aria-label='...')
+		ul.pagination.justify-content-center
+			li.page-item.disabled
+				a.page-link(href='#', tabindex='-1') 
+					+icon('pug-right')
+			li.page-item.active
+				a.page-link(href='#')
+					|1  
+			li.page-item
+				a.page-link(href='#') 2
+			li.page-item
+				a.page-link(href='#') 3
+			li.page-item
+				a.page-link.page-link-more(href='#') ...
+			li.page-item
+				a.page-link(href='#') 11
+			 
+			li.page-item
+				a.page-link(href='#') 12
+			 
+			li.page-item
+				a.page-link(href='#') 13 
+			li.page-item
+				a.page-link(href='#') 
+					+icon('pug-left')
+//- h2.yel(class="  wow fadeInUp animated " data-wow-offset="120" data-wow-duration="1.2s")  
+mixin arrow()
+	.swiper-button-hand.swiper-button-hand-next.swiper-button-next
+		+icon('chevron-right')
+	.swiper-button-hand.swiper-button-hand-prev.swiper-button-prev
+		+icon('chevron-left')
+		
+ 
+mixin soc()
+	+b.soc
+		+e.A.item--fb(href="#" target="_blank")
+			+icon('fb')
+		+e.A.item--instagram(href="#" target="_blank")
+			img(src="img/instagram-color.svg", alt="")
+			//- img.img-svg(src="img/instagram.svg", alt="")
+			+icon('instagram')
+		block
+mixin soc2()
+	+b.soc--share
+		.small.text-dark Рассказать друзьям  —
+		+e.A.item--vk.--share(href="#" target="_blank")
+			+icon('vk')
+		+e.A.item--fb.--share(href="#" target="_blank")
+			+icon('fb')
+mixin soc4()
+	+b.soc--share
+		.fw-900.w-100 Поделиться в соц. сетях
+		+e.A.item--vk.--share(href="#" target="_blank")
+			+icon('vk')
+		+e.A.item--fb.--share(href="#" target="_blank")
+			+icon('fb')
+		
+		+e.A.item--instagram.--share(href="#" target="_blank")
+			+icon('instagram')
+
+mixin soc3()
+	+b.soc--share 
+		+e.A.item--vk(href="#" target="_blank")
+			+icon('vk')
+		+e.A.item--fb(href="#" target="_blank")
+			+icon('fb')
+
+//- WP menu
+//- mixin mnu()
+//- 	- var nav= { "Наши работы":"#","Цены":"#","Калькулятор":"#","Акции":"#" ,"Заказать":"#"}
+//- 	ul.menu
+//- 		li.menu-item.menu-item-has-children
+//- 			a(href="#") О нас
+//- 			ul.sub-menu
+//- 				li.menu-item: a(href="#") Строительство загородных домов
+//- 				li.menu-item: a(href="#") Отделка загородных домов
+//- 				li.menu-item: a(href="#") Покраска деревянных домов
+//- 				li.menu-item: a(href="#") Штукатурные фасады загородных домов
+//- 		each linkPatch, linkName in nav
+//- 			li.menu-item: a(href="#")= linkName
+
+mixin mnu()
+	- var nav= {"Академия":"#","Программы":"#","тренера":"#"}
+	+e.UL.nav
+		each linkPatch, linkName in nav
+			+e.LI.item: +e.A.link(href= linkPatch)= linkName
+ 
+mixin s-nav(  drop, act, ...items) 
+	+b.section-nav
+		+e.NAV.body--js(data-droptitle= drop)&attributes(attributes)
+				+e.UL.nav.nav-ul
+					li
+						a.active(href="#")= act
+					each item in items 
+						li
+							a(href="#")= item 
+
+//- mixin tab-nav(  drop, act, ...items) 
+	+b.section-nav
+		+e.body--js(data-droptitle= drop)  
+				+e.UL.nav.tabs__caption
+					li.tabs__btn.active(href="#")= act
+					each item in items 
+						li.tabs__btn= item 
+
