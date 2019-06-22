@@ -13,13 +13,14 @@
 		background-color: #ffffff;
 		min-height: 100%;
 		@include media-breakpoint-up(xl) { 
-			padding-right: rem(56);
+			padding-right: rem(48);
+			padding-left: rem(56);
 			padding-top: rem(50);
 		}
 		padding-top: rem(60);
 		@include media-breakpoint-up(lg) {
 			
-			// padding-left: rem(26);
+			padding-left: rem(26);
 			// padding-right: rem(26);
 			// padding-left: rem(56); 
 		}
@@ -46,6 +47,7 @@
 			padding-top: rem(50);
 			&--lg{
 				padding-left: rem(56);
+				box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
 
 			}
 		}

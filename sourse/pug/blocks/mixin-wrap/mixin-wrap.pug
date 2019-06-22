@@ -102,7 +102,7 @@ mixin mnu()
  
 mixin s-nav(  drop, act, ...items) 
 	+b.section-nav
-		+e.NAV.body--js(data-droptitle= drop)&attributes(attributes)
+		+e.NAV.body--js1(data-droptitle= drop)&attributes(attributes)
 				+e.UL.nav.nav-ul
 					li
 						a.active(href="#")= act
@@ -118,3 +118,5 @@ mixin s-nav(  drop, act, ...items)
 					each item in items 
 						li.tabs__btn= item 
 
+mixin video()
+	a.video-block.bgs.popup-youtube(href="https://www.youtube.com/watch?v=_sI_Ps7JSEk" style="background-image: url(//img.youtube.com/vi/en6gms6e54Q/0.jpg);")

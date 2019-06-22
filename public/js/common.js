@@ -212,12 +212,12 @@ jQuery(document).ready(function ($) {
 		nextArrow: arrl3,
 		// the magic
 		responsive: [  {
-
-      breakpoint: 575.99,
+			
+			breakpoint: 575.99,
       settings: {
-        slidesToShow: 1, 
+				slidesToShow: 1, 
       }
-
+			
     } ]
 	});
 	
@@ -232,55 +232,100 @@ jQuery(document).ready(function ($) {
 		nextArrow: arrl3,
 		// the magic
 		responsive: [  {
-
-      breakpoint: 767.99,
+			
+			breakpoint: 767.99,
       settings: {
-        slidesToShow: 1, 
+				slidesToShow: 1, 
       }
-
+			
     } ]
 	});
-
+	$(".champ-board--js").mCustomScrollbar({
+		axis: "x",
+		mouseWheel:  false 
+	});  
 	
+	$(document).on('click', '.tabs__btn' , function(){
 
+		
+		$(".champ-board--js").mCustomScrollbar("destroy");
+			$(".champ-board--js").mCustomScrollbar({
+		axis: "x",
+		mouseWheel:  false 
+	}); 
+	})
 
 	$(window).on("load", function () {
 		// cкрывает меню в dropdown
-		var wrapper = document.querySelector(".section-nav__body--js");
+		var wrapper = document.querySelector(".section-nav__body--js1");
+		var wrapper2 = document.querySelector(".section-nav__body--js2");
+		var wrapper3 = document.querySelector(".section-nav__body--js3");
 		if(wrapper) {
 
 			var nav = priorityNav.init({
-				mainNavWrapper: ".section-nav__body--js", // mainnav wrapper selector (must be direct parent from mainNav)
+				mainNavWrapper: ".section-nav__body--js1", // mainnav wrapper selector (must be direct parent from mainNav)
 			mainNav: ".nav-ul", // mainnav selector. (must be inline-block)
 			navDropdownLabel: wrapper.dataset.droptitle,
 			navDropdownClassName: "nav__dropdown", // class used for the dropdown.
 			navDropdownToggleClassName: "nav__dropdown-toggle", // class used for the dropdown toggle.
 			navDropdownBreakpointLabel: "Выбрать", //button label for navDropdownToggle when the breakPoint is reached.
 			breakPoint:                 0, 
+			// moved: function () { scrolldrop()}, // executed when item is moved to dropdown
+			// movedBack: function () { scrolldrop()} // executed when item is moved back to main menu
+		}); 
+			var nav2 = priorityNav.init({
+				mainNavWrapper: ".section-nav__body--js2", // mainnav wrapper selector (must be direct parent from mainNav)
+			mainNav: ".nav-ul", // mainnav selector. (must be inline-block)
+			navDropdownLabel: wrapper2.dataset.droptitle,
+			navDropdownClassName: "nav__dropdown", // class used for the dropdown.
+			navDropdownToggleClassName: "nav__dropdown-toggle", // class used for the dropdown toggle.
+			navDropdownBreakpointLabel: "Выбрать", //button label for navDropdownToggle when the breakPoint is reached.
+			breakPoint:                 0, 
+			// moved: function () { scrolldrop()}, // executed when item is moved to dropdown
+			// movedBack: function () { scrolldrop()} // executed when item is moved back to main menu
 		});
+		
+			var nav3 = priorityNav.init({
+				mainNavWrapper: ".section-nav__body--js3", // mainnav wrapper selector (must be direct parent from mainNav)
+			mainNav: ".nav-ul", // mainnav selector. (must be inline-block)
+			navDropdownLabel: wrapper2.dataset.droptitle,
+			navDropdownClassName: "nav__dropdown", // class used for the dropdown.
+			navDropdownToggleClassName: "nav__dropdown-toggle", // class used for the dropdown toggle.
+			navDropdownBreakpointLabel: "Выбрать", //button label for navDropdownToggle when the breakPoint is reached.
+			breakPoint:                 0, 
+			// moved: function () { scrolldrop()}, // executed when item is moved to dropdown
+			// movedBack: function () { scrolldrop()} // executed when item is moved back to main menu
+		});
+
 	}
+
+
+	var scrollbar = $(".nav__dropdown") 
+	function scrollBarFun(){
+		scrollbar.mCustomScrollbar("destroy");
+		scrollbar.mCustomScrollbar(); 
+	}
+		$(window).resize(function(){
+			scrollBarFun()
+			if ($(".priority-nav-is-visible.is-open")) {
+
+				$(".priority-nav-is-visible.is-open").click()
+			}
+		}) 
+				$(document).on('click', '.nav__dropdown-toggle', function () {
+					scrollBarFun()
+				}); 
+		});
 		
-		// setTimeout(function(){
-			
-		// 	$(".nav__dropdown").mCustomScrollbar();
-		// 	$(document).on('click', '.nav__dropdown-toggle', function () {
-		// 		// heightses();
-		// 		// $(".nav__dropdown").mCustomScrollbar("update");
-		// 		$(".nav__dropdown").mCustomScrollbar();
 		
-		// 	});
-		// }, 100)
-});
-
-
-var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
-
-$('.datepicker-date').each(function () {
-	var th = $(this);
-	th.datepicker({
-		locale: 'ru-ru',
-		uiLibrary: 'bootstrap4',
-		format: 'dd.mm.yyyy',
+		var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+		
+		$('.datepicker-date').each(function () {
+			var th = $(this);
+			th.datepicker({
+				locale: 'ru-ru',
+				uiLibrary: 'bootstrap4',
+				format: 'dd.mm.yyyy',
 		// minDate: today,
 		icons: {
 			rightIcon: '<i class="custon-icon" ><img src="img/calendar.svg"></i>'
@@ -311,6 +356,16 @@ $('.datepicker-date').each(function () {
 				}
 			});
 		})
+
+		$('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+		 
+			type: 'iframe',
+			mainClass: 'mfp-fade',
+			removalDelay: 160,
+			preloader: false,
+	
+			fixedContentPos: false
+		});
 
 
 
@@ -496,9 +551,9 @@ JSCCommon = {
 			// e.preventDefault(); 
 			var link = $(this).attr('href')
 			console.log(link)
-			$(".tabs__nav").find("a").removeClass('active')
-			$(this)
-				.addClass('active').parent()
+			// $(".tabs__nav")
+			$(this).closest(".section-nav__body").find("a").removeClass('active')
+			$(this).addClass('active')
 				.closest('.' + tab).find('.' + tab + '__content' + link)
 				.fadeIn().addClass('active')
 				.siblings().hide().removeClass('active')

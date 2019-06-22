@@ -682,6 +682,7 @@ text-transform: uppercase;
 			.video-block{
 				@include block(370,191);
 				margin-bottom: rem(30);
+				// @extend .block-animate;
 				iframe{
 					position: absolute;
 					left: 0;
@@ -689,6 +690,32 @@ text-transform: uppercase;
 					width: 100% !important;
 					height: 100% !important;
 					border: 0 !important;
+				}
+				&::before{
+					content: '';
+					@include a-cent;
+					width: rem(73);
+					height: rem(73);
+					border-radius: 50%;
+					background-color: #ffffff;
+					@include mt;
+
+				}
+				&::after{
+					content: '';
+					@include a-cent;
+					@include triangle(rem(22px * 1.2) rem(18px * 1.2) , $primary, right);
+					margin-left: rem(2px);
+					@include mt;
+
+				}
+				&:hover{
+					&::before{
+						background-color: #eeeded;
+					}
+					&::after{
+						opacity: 0.8;
+					}
 				}
 			}
 

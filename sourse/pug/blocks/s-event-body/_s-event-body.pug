@@ -4,7 +4,7 @@ mixin s-event-body()
 		.container
 			+b.tabs
 				+b.section-nav.tabs__nav
-						+e.body--js(data-droptitle="еще")  
+						+e.body--js2(data-droptitle="еще")  
 							+e.UL.nav.nav-ul.tabs__caption
 								li
 									a.tabs__btn.active(href="#tab-tourn-1")   Участникам
@@ -69,26 +69,102 @@ mixin s-event-body()
 										td.divider(colspan="5")
 								tr
 									td.title(colspan="5")  Девушки до 10 лет
-									+tr('Принята','','bg-success')
-									+tr('Отклонена','По болезни','bg-danger2')
-									+tr('Принята','','bg-success')
-									+tr('Принята','','bg-warning')
+								+tr('Принята','','bg-success')
+								+tr('Отклонена','По болезни','bg-danger2')
+								+tr('Принята','','bg-success')
+								+tr('Принята','','bg-warning')
 									
 
 								tr
 									td.title(colspan="5")  Девушки до 18 лет
-									+tr('Принята','','bg-success')
-									+tr('Отклонена','По болезни','bg-danger2')
-									+tr('Принята','','bg-success')
-									+tr('Принята','','bg-warning') 
+								+tr('Принята','','bg-success')
+								+tr('Отклонена','По болезни','bg-danger2')
+								+tr('Принята','','bg-success')
+								+tr('Принята','','bg-warning') 
 					// /+e.content
-					+e.content#tab-tourn-4
-						p 4 В биографии Артура Эш звездным периодом были 1960-е и 1970-е года. Иногда спортсмена называют афроамериканским первооткрывателем, поскольку именно он стал первым черным, победившим на чемпионате США, а также соревнованиях Уимблдона. Кроме того Эш одержал много других побед за свою карьеру. К тому же, он стал первым афроамериканцем в команде США на чемпионате Davis в 1963 году.
-						p Эш играл в теннис в Калифорнийском университете в Лос-Анджелесе, став также национальным студенческим чемпионом в 1965. Он выиграл три высших турнира в теннисе: чемпионат США (1968), Австралии (1970), Уимблдон (1975). В 1980 году Эш покинул спорт, а в 1985 спортсмен был избран в национальный Зал славы тенниса.
+					+e.content#tab-tourn-4.active  
+						+b.tabs--champ 
+							+b.NAV.section-nav__body.section-nav__body--champ.section-nav__body--js3(data-droptitle="еще")
+								ul.tabs__caption.tabs__caption--champ.nav-ul
+									li
+										a.tabs__btn.tabs__btn--champ.active(href="#tab-inner-1") Девушки до 10 лет
+									li
+										a.tabs__btn.tabs__btn--champ(href="#tab-inner-2") Девушки до 8 лет
+									li
+										a.tabs__btn.tabs__btn--champ(href="#tab-inner-3") Юноши до 10 лет
+									li
+										a.tabs__btn.tabs__btn--champ(href="#tab-inner-4") Девушки до 9 лет
+									li
+										a.tabs__btn.tabs__btn--champ(href="#tab-inner-5") Юноши до 9 лет
+							+e.wrap--inner
+								mixin cont()
+									+e.content&attributes(attributes) 
+										//- +b.champ-board
+										block
+										+b.champ-board--js
+											+e.inner
+											
+												mixin item(n, ...items)
+													+e.item&attributes(attributes) 
+														.row
+															+e.col-name.col= n
+															each item in items
+																.col-auto= item
+												- var y = 8
+												+e.row.row
+													+e.col.col-auto 
+														- for (var x = 0; x < (y / 1 / 1); x++)
+															+e.group
+															
+																+item('Азаренко Дарья','4','4','4','4','4')
+																+item('Куликова Маргарита','1','0','1','0','0')(class=` bg-success ` )
+															// /+e.group
+													// /+e.col.col-auto
+													
+													+e.col.col-auto 
+														- for (var x = 0; x < (y / 1 / 2); x++)
+															+e.group
+															
+																+item('Азаренко Дарья','4','4','4','4','4')
+																+item('Куликова Маргарита','1','0','1','0','0')(class=` bg-success ` )
+															// /+e.group
+													// /+e.col.col-auto
+													
+													+e.col.col-auto
+														- for (var x = 0; x < (y / 2 / 2); x++)
+															+e.group
+																+item('Азаренко Дарья','4','0','4','4','4')(class=` bg-success ` )
+																+item('Куликова Маргарита','1','1','1','0','0')
+															// /+e.group
+													// /+e.col.col-auto
+													
+													+e.col.col-auto
+														- for (var x = 0; x < (y / 4 / 2); x++)
+															+e.group
+																+item('Азаренко Дарья','4','0','4','4','4')(class=` bg-success ` )
+																+item('Куликова Маргарита','1','1','1','0','0')
+															// /+e.group
+													// /+e.col.col-auto
+ 
+													+e.col.col-auto
+														+e.group
+															+item('Азаренко Дарья','4','0','4','4','4')(class=` bg-success ` )
+														// /+e.group
+													// /+e.col.col-auto
 
-						p В 1988 году Артур обнаружил у себя СПИД. Вероятнее всего, заражение ВИЧ-инфекцией произошло во время переливания крови, когда ему в 1983 году делали операцию на сердце. Эш в 1992 году устроил пресс-конференцию для публики, а уже в следующем году умер.
-
-						p Дополнительные данные: С 1966 по 1968 год Артур служил в армии США, получив звание второго лейтенанта. Трехтомное произведение Артура об афроамериканских спортсменах «A Hard Road To Glory» было издано в 1988 году. Кроме того, в биографии Артура Эш была написана еще одна книга: «Days of Grace: A Memoir», опубликованная в 1993.
+												
+									// /+e.content
+								+cont(id="tab-inner-1" class="active") 
+									
+								+cont(id="tab-inner-2" class="") 
+									
+								+cont(id="tab-inner-3" class="") 
+									
+								+cont(id="tab-inner-4" class="") 
+									
+								+cont(id="tab-inner-5" class="") 
+									
+						// /.tabs--champ
 					// /+e.content
 					+e.content#tab-tourn-5
 						+b.TABLE.table-order
@@ -98,19 +174,19 @@ mixin s-event-body()
 									th Матч
 									th Время начала 
 							tbody
+								tr
+									td.title(colspan="3")  12.03.2019
 								mixin tr(t1)
 									tr.bg(style="background-image: url(img/td-bg.jpg);")
 										td(data-title="№ ")= t1
 										td(data-title="Матч ") Азаренко Виктория Игорьевна —  Крот Ульяна  Петровна
 										td(data-title="Время начала ") 17:00
 									tr
-										td.divider(colspan="5")
-								tr
-									td.title(colspan="5")  12.03.2019
-									+tr(1)
-									+tr(2)
+										td.divider(colspan="3")
+								+tr(1)
+								+tr(2)
 					// /+e.content
-					+e.content#tab-tourn-6.active  
+					+e.content#tab-tourn-6
 
 						+form-wrap(class='form-wrap--lg')
 							+e.head
@@ -158,8 +234,8 @@ mixin s-event-body()
 								| Лучшие по результатам серии будут награждены суперпризами от "WILSON" - теннисной ракеткой!!
 								br
 								| Суперприз достанется одному мальчику и одной девочке  в каждой возрастной категории. Итого по итогам серии будут вручены 6 ракеток!!!
-								+e.btn-group
-									+e.btn.btn-danger2(href="#") Отменить
-									+e.btn.btn-success(href="#") Оплатить онлайн
+							+e.btn-group
+								+e.btn.btn-danger2(href="#") Отменить
+								+e.btn.btn-success(href="#") Оплатить онлайн
 					// /+e.content
 	// end s-event-body

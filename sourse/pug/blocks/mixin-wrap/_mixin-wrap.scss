@@ -176,18 +176,17 @@
  	background-color: #ffffff;
  	position: relative;
 	 z-index: 200;
-	 position: relative;
-	//  overflow: hidden;
+	 
 	 @include media-breakpoint-up(xl) {
 		 
-		 max-height: rem(68);
+		//  max-height: rem(68);
 		 padding: rem(12) rem(40);
 		}	
 		@include media-breakpoint-up(sm) {
 
-			max-height: rem(62);
+			// max-height: rem(62);
 		}
-		max-height: rem(54.3);
+		// max-height: rem(54.3);
 	padding: rem(12) rem(2);
 	 //  max-width: 700px;
 	 //  white-space: nowrap;
@@ -207,6 +206,12 @@
 	 &__body{
 		margin-left: auto;
 		margin-right: auto;
+		position: relative;
+		// overflow-x: hidden;
+		&:not(.priority-nav){
+			overflow: hidden;
+
+		 }
 		&--shirt{
 			@include media-breakpoint-up(sm) {
 
@@ -226,33 +231,18 @@
 			}
 	&__link {}
 
-	.nav__dropdown {
-		box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-		background-color: #ffffff;
-		// border-radius: 6px;
-		right: 0;
-		padding: rem(16);
-		max-height: 218px;
-		overflow-y: auto;
-		white-space: nowrap;
-		text-align: left;
-		overflow-x: hidden;
-		min-width: rem(114);
-		li {
-			list-style-type: none;
-			display: block !important;
-		}
-		.tabs__btn.active{
-			text-decoration: underline;
-		}
-	}
+
 	li {
 		list-style-type: none;
 	}
-
+	.nav-ul{
+		// overflow: hidden;
+		// position: relative;
+	}
   .nav__dropdown-toggle,
  &__body>ul>li a {
-	border: 1px solid transparent;
+	border: 1px solid transparent; 
+	// overflow: hidden;
 	@include media-breakpoint-up(sm) {
 		padding: em(9) em(20);
 
@@ -275,7 +265,55 @@
 }
  }
 
+ .nav__dropdown-toggle  {
+	border: 1px solid transparent; 
+	// overflow: hidden;
+	@include media-breakpoint-up(sm) {
+		padding: em(6) em(10);
 
+	}
+	padding: em(3) em(8);
+	display: inline-block;
+	border-radius: 50px;
+	background-color: #ffffff;
+	text-decoration: none !important;
+	@include mt;
+	color: $body-color;
+ outline: none !important;
+ z-index: 5;
+ margin-left: 10px;
+ &.is-open,
+	&:hover,
+	&.active {
+		border: 1px solid $success;
+		color: #2f353a;
+	}
+}
+.nav__dropdown {
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+	background-color: #ffffff;
+	// border-radius: 6px;
+	right: 0;
+	padding: rem(16);
+	max-height: 218px;
+	overflow-y: auto;
+	white-space: nowrap;
+	text-align: left;
+	overflow-x: hidden;
+	min-width: rem(114);
+	z-index: 200;
+	li {
+		list-style-type: none;
+		display: block !important;
+		a{
+			// text-decoration: none !important;
+			border: none !important;
+		}
+	}
+	.tabs__btn.active{
+		text-decoration: underline;
+	}
+}
 
  .nav__dropdown-toggle {
  	position: relative; 
