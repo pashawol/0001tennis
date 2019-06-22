@@ -49,7 +49,7 @@
 				@include media-breakpoint-down(sm) {
 		height: 240px;
 				}
-		@include media-breakpoint-up(sm) {
+		@include media-breakpoint-up(md) {
 
 			margin-left: rem(-24);
 		}
