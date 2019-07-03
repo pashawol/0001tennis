@@ -18,10 +18,22 @@
     <link rel="stylesheet" href="css/main.min.css">
     <!-- [if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/2014.01.31/classList.min.js"></script><![endif] -->
   </head>
-  <body>
+  <body><svg class="invisible">
+<linearGradient id="insta-gradient">
+<stop offset="0%" x1="50%" y1="0" x2="50%" y2="100%" stop-color="#9404e4"/>
+<stop offset="100%" x1="50%" y1="0" x2="50%" y2="100%" stop-color="#fcb306"/>
+</linearGradient>
+</svg>
     <div class="menu-mobile menu-mobile--js" id="my-menu">
       <div class="menu-mobile__inner">
-        <div class="menu-mobile__title">меню сайта
+        <div class="menu-mobile__title">
+          <div class="row">
+            <div class="col-auto">меню сайта</div>
+            <div class="col-auto">
+              <div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
+              </div>
+            </div>
+          </div>
         </div>
         <ul class="menu-mobile__nav">
           <li class="menu-mobile__item menu-mobile__item--current"><a class="menu-mobile__link" href="#">Турниры академии</a>
@@ -63,7 +75,7 @@
         </ul>
         <div class="d-lg-none">
           <ul class="menu-mobile__nav">
-            <li class="menu-mobile__item"><a class="menu-mobile__link" href="#">Академия</a>
+            <li class="menu-mobile__item"><a class="menu-mobile__link menu-mobile__link--active" href="#">Академия</a>
             </li>
             <li class="menu-mobile__item"><a class="menu-mobile__link" href="#">Программы</a>
             </li>
@@ -75,7 +87,7 @@
           <div class="soc"><a class="soc__item soc__item--fb" href="#" target="_blank">
             <svg class="icon icon-fb ">
               <use xlink:href="img/svg/sprite.svg#fb"></use>
-            </svg></a><a class="soc__item soc__item--instagram" href="#" target="_blank"><img src="img/instagram-color.svg" alt=""/>
+            </svg></a><a class="soc__item soc__item--instagram" href="#" target="_blank">
             <svg class="icon icon-instagram ">
               <use xlink:href="img/svg/sprite.svg#instagram"></use>
             </svg></a>
@@ -103,7 +115,7 @@
               </div>
               <div class="top-nav__col-nav col d-none d-lg-block">
                 <ul class="top-nav__nav">
-                  <li class="top-nav__item"><a class="top-nav__link" href="#">Академия</a>
+                  <li class="top-nav__item"><a class="top-nav__link top-nav__link--active" href="#">Академия</a>
                   </li>
                   <li class="top-nav__item"><a class="top-nav__link" href="#">Программы</a>
                   </li>
@@ -123,7 +135,7 @@
                 <div class="soc"><a class="soc__item soc__item--fb" href="#" target="_blank">
                   <svg class="icon icon-fb ">
                     <use xlink:href="img/svg/sprite.svg#fb"></use>
-                  </svg></a><a class="soc__item soc__item--instagram" href="#" target="_blank"><img src="img/instagram-color.svg" alt=""/>
+                  </svg></a><a class="soc__item soc__item--instagram" href="#" target="_blank">
                   <svg class="icon icon-instagram ">
                     <use xlink:href="img/svg/sprite.svg#instagram"></use>
                   </svg></a>
@@ -234,7 +246,7 @@
               <div class="soc"><a class="soc__item soc__item--fb" href="#" target="_blank">
                 <svg class="icon icon-fb ">
                   <use xlink:href="img/svg/sprite.svg#fb"></use>
-                </svg></a><a class="soc__item soc__item--instagram" href="#" target="_blank"><img src="img/instagram-color.svg" alt=""/>
+                </svg></a><a class="soc__item soc__item--instagram" href="#" target="_blank">
                 <svg class="icon icon-instagram ">
                   <use xlink:href="img/svg/sprite.svg#instagram"></use>
                 </svg></a>

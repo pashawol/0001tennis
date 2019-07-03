@@ -179,7 +179,7 @@ body {
 		width: 100%;
 		height: 100%;
 		@include mt;
-		// background-color: #000000;
+		background-color: #000000;
 		opacity: 0;
 		z-index: -1;
 		top: 0;
@@ -199,10 +199,10 @@ body {
 			@include media-breakpoint-up(sm) {
 
 				// transform: translate(#{rem(491)}, 0);
-			left: #{rem(491)};
+			// left: #{rem(491)};
 			}
 			// transform: translate(#{rem(300)}, 0);
-		left: #{rem(300)};
+		// left: #{rem(300)};
 			// top: 0;
 			// left: 0;
 			// height: 100%;
@@ -224,7 +224,7 @@ a{
 .top-nav,
 .main-wrapper {
 
-	@include mt(.6);
+	@include mt(.3);
 }
 .main-wrapper {
 	position: relative;
@@ -382,6 +382,7 @@ a{
 	transform: translateY(-50%);
 	z-index: 2;
 	cursor: pointer;
+	@include mt;
 
 	i {
 		line-height: 1;
@@ -389,10 +390,13 @@ a{
 	}
 
 	cursor: pointer;
-
+	&:hover{
+		opacity: 0.7;
+	}
 	&.l {
 		left: 0;
 		svg {
+			@include mt;
 			@include transform(rotateY(180deg));
 		}
 	}

@@ -3,7 +3,13 @@ mixin mob-mnu()
 	+b.menu-mobile--js#my-menu
 		+e.inner
 			
-			+e.title меню сайта
+			+e.title
+				.row
+					.col-auto меню сайта
+					.col-auto
+						+b.toggle-menu-mobile--js
+							span
+							//- +e.DIV.text МЕНЮ
 			- var nav= { "Семинары и мастер-классы":"#","Оценка по видео":"#","Тренировочные программы":"#","Фан-клуб":"#","Новости":"#","О школе":"#","Спонсорам":"#","Контакты":"#"}
 				+e.UL.nav
 					+e.LI.item--current

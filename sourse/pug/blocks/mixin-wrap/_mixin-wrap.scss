@@ -15,7 +15,8 @@
 		cursor: pointer;
  		.icon {
  			color: $body-color;
- 			font-size: rem(20);
+			 font-size: rem(20);
+			 @include mt;
  		}
 
  		&:hover {
@@ -51,9 +52,9 @@
 
  			&:hover {
 
- 				.icon,
+				 .icon,
  				.img-svg {
- 					opacity: 0;
+					fill: url(#insta-gradient);
 
  				}
 

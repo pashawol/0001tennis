@@ -8,12 +8,12 @@
 .page-link {
   position: relative;
   // display: block;
-  display: inline-flex;
+  display: flex;
   text-align: center;
   justify-content: center;
   align-items: center;
   // padding: $pagination-padding-y $pagination-padding-x;
-  margin-left: -$pagination-border-width;
+  // margin-left: -$pagination-border-width;
   line-height: $pagination-line-height;
   color: #26292b;
   // background-color: $pagination-bg;
@@ -49,7 +49,7 @@
   &:first-child {
     margin-right: rem(10);
     .page-link {
-      margin-left: 0;
+      // margin-left: 0;
       // @include border-left-radius($border-radius);
       border: 1px solid $pagination-disabled-border-color;
     }

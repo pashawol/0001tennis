@@ -19,7 +19,8 @@ mixin s-events()
 									mixin gr(i,t1,t2)
 										+e.group.row
 											+e.group-title.col
-												+icon(i)
+												+e.icon-wrap
+													+icon(i)
 												=t1
 											.col-auto.strong= t2 
 									+gr("calendar","Окончание регистрации:","16.04.2019")
@@ -68,7 +69,8 @@ mixin s-events-10-1()
 									mixin gr(i,t1,t2)
 										+e.group.row
 											+e.group-title.col
-												+icon(i)
+												+e.icon-wrap
+													+icon(i)
 												=t1
 											.col-auto.strong= t2 
 									+gr("calendar","Окончание регистрации:","16.04.2019")

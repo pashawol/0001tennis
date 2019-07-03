@@ -206,7 +206,7 @@
 	}
 	// padding-top: rem(30);
 	.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
-		height: rem(9px);
+		height: rem(10);
 		top: rem(-3);
 		border-radius: $h1-font-size;
 		background-color: $success !important;
@@ -216,7 +216,7 @@
 			@include a-cent();
 			border-left: 1px solid #fff;
 			width: 1px;
-			height: rem(5px);
+			height: rem(6px);
 
 		}
 		&::before{
@@ -286,7 +286,12 @@
 			height: 50%;
 			width: 1px;
 			right: rem(-26);
-			background-color: #e5e5e5;
+			// background-color: #e5e5e5;
+			width: rem(33);
+			border: 1px solid #e5e5e5;
+			// border: 1px solid #000;
+			border-left: none;
+			z-index: 2;
 		}
 	}
 	&__item{
@@ -301,21 +306,24 @@
 		margin-top: rem(10);
 		margin-bottom: rem(10);
 		position: relative;
-		&::before,
-		&::after{
+		&::before
+		// ,
+		// &::after
+		{
 			content: ''; 
 			@include a-cent(y);
 			width: rem(33);
 			height: 1px;
 			background-color: #e5e5e5;
+			// background-color: #000000;
 		}
 		&::before{
 			right: calc(100% - #{rem(6)} );
 		}
 		
-		&::after{
-			left: calc(100% - #{rem(6)} );
-		}
+		// &::after{
+		// 	left: calc(100% - #{rem(6)} );
+		// }
 
 		&:nth-child(even){
 		}
@@ -356,7 +364,7 @@
 	// text-align: justify;
 	&:hover,
 	&.active{
-		font-weight: bold;	
+		// font-weight: bold;	
 		border-color:$success !important;
 
 

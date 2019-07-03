@@ -273,6 +273,8 @@ jQuery(document).ready(function ($) {
 			// moved: function () { scrolldrop()}, // executed when item is moved to dropdown
 			// movedBack: function () { scrolldrop()} // executed when item is moved back to main menu
 		}); 
+	}
+	if(wrapper2) {
 			var nav2 = priorityNav.init({
 				mainNavWrapper: ".section-nav__body--js2", // mainnav wrapper selector (must be direct parent from mainNav)
 			mainNav: ".nav-ul", // mainnav selector. (must be inline-block)
@@ -284,7 +286,8 @@ jQuery(document).ready(function ($) {
 			// moved: function () { scrolldrop()}, // executed when item is moved to dropdown
 			// movedBack: function () { scrolldrop()} // executed when item is moved back to main menu
 		});
-		
+	}
+	if(wrapper3) {
 			var nav3 = priorityNav.init({
 				mainNavWrapper: ".section-nav__body--js3", // mainnav wrapper selector (must be direct parent from mainNav)
 			mainNav: ".nav-ul", // mainnav selector. (must be inline-block)
@@ -347,14 +350,17 @@ jQuery(document).ready(function ($) {
 				image: {
 					verticalFit: true,
 					// titleSrc: function(item) {
-					//   return item.el.attr('title') + ' &middot; <a class="image-source-link" href="'+item.el.attr('data-source')+'" target="_blank">image source</a>';
-					// }
-
-				},
-				gallery: {
-					enabled: true
-				}
-			});
+						//   return item.el.attr('title') + ' &middot; <a class="image-source-link" href="'+item.el.attr('data-source')+'" target="_blank">image source</a>';
+						// }
+						
+					},
+					gallery: {
+						enabled: true,
+						tPrev: 'Назад (Кнопка влева)', // title for left button
+						tNext: 'Вперед (Кнопка вправа)', // title for right button
+						tCounter: '<span class="mfp-counter">%curr% из %total%</span>',
+					}
+				});
 		})
 
 		$('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({

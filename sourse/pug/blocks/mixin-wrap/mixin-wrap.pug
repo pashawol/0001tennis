@@ -51,7 +51,7 @@ mixin soc()
 		+e.A.item--fb(href="#" target="_blank")
 			+icon('fb')
 		+e.A.item--instagram(href="#" target="_blank")
-			img(src="img/instagram-color.svg", alt="")
+			//- img(src="img/instagram-color.svg", alt="")
 			//- img.img-svg(src="img/instagram.svg", alt="")
 			+icon('instagram')
 		block
@@ -95,8 +95,9 @@ mixin soc3()
 //- 			li.menu-item: a(href="#")= linkName
 
 mixin mnu()
-	- var nav= {"Академия":"#","Программы":"#","тренера":"#"}
+	- var nav= { "Программы":"#","тренера":"#"}
 	+e.UL.nav
+		+e.LI.item: +e.A.link--active(href="#") Академия
 		each linkPatch, linkName in nav
 			+e.LI.item: +e.A.link(href= linkPatch)= linkName
  

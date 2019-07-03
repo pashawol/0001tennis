@@ -138,7 +138,7 @@ p{
 	color: #ffffff !important;
 	@include media-breakpoint-up(md) {
 
-		bottom: rem(37);
+		bottom: rem(27);
 	}
 	bottom: rem(15);
 	padding-left: rem(15);
@@ -149,6 +149,7 @@ p{
 	margin-right: auto;
 	max-width: rem(317);
 	text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+	margin-bottom: .5em;
 }	
 &__date{
 	font-size: rem(14);

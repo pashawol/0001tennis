@@ -16,6 +16,7 @@
 			box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 		}
 	}
+
 	&__img-wrap{
 		@include media-breakpoint-up(md) {
 			
@@ -92,12 +93,19 @@
 		margin-bottom: 1em;
 		&-title{
 			display: flex;
-			.icon{
-				font-size: rem(16);
-				margin-right: rem(12);
-				color: #495057;
-			}
+			align-items: center;
 		}
+	}
+	&__icon-wrap{
+		width: em(22);
+		text-align: center;
+		margin-right: rem(12);
+	.icon{
+		font-size: rem(16);
+		color: #495057;
+		position: relative;
+		top: em(-1);
+	}
 	}
 	&__date{
 		border-bottom: 1px solid rgba($color: $body-color, $alpha: .1);
