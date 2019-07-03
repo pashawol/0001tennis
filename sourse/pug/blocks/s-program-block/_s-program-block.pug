@@ -1,4 +1,4 @@
-mixin s-program-block()
+mixin s-program-block(x)
 	// start s-program-block
 	+b.s-program-block
 		+e.head
@@ -78,13 +78,21 @@ mixin s-program-block()
 					tr
 						td(data-title="Количество недель")  USD
 						td(data-title="1 неделя") 
-							+e.price 850.00
+							+e.LABEL.price-wrap
+								+e.INPUT.input(type=`radio` checked name=`radio-price-${x}`)
+								+e.price 850.00
 						td(data-title="3 недели") 
-							+e.price 1.700.00
+							+e.LABEL.price-wrap
+								+e.INPUT.input(type=`radio` name=`radio-price-${x}`)
+								+e.price 1.700.00
 						td(data-title="3 недели") 
-							+e.price 2.400.00
+							+e.LABEL.price-wrap
+								+e.INPUT.input(type=`radio` name=`radio-price-${x}`)
+								+e.price 2.400.00
 						td(data-title="4 недели") 
-							+e.price 2.850.00
+							+e.LABEL.price-wrap
+								+e.INPUT.input(type=`radio` name=`radio-price-${x}`)
+								+e.price 2.850.00
 			+e.btn(href="#") зарегистрироваться
 			
 	// end s-program-block

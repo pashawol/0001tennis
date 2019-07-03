@@ -100,7 +100,35 @@
 			}
 		}
 	}
+	&__price-wrap{
+		cursor: pointer;
+	}
+	&__input{
+		@extend .invisible;
+	}
+	&__input:checked + &__price{
+		box-shadow: 0 0 0  rem(3) $primary, 0 rem(3)  rem(5) $primary;
+		&::before{
+			border-color: $primary;
+			opacity: 1;
+		}
+	}
 	&__price{
+		position: relative;
+		&::before{
+			content: '';
+			position: absolute;
+			left: em(8);
+			height: em(10);
+			width: em(10);
+			border-radius: 50%;
+			@include mt;
+			background-color: $info;
+			@include a-cent(y);
+			opacity: 0;
+		}
+		@include mt;
+		padding-left: em(15);
 		border-radius: 10px;
 			background-color: #ffffff;
 			padding: rem(5) rem(15);

@@ -56,11 +56,11 @@ mixin soc()
 			+icon('instagram')
 		block
 mixin soc2()
-	+b.soc--share
+	+b.soc--share.social.social-js 
 		.small.text-dark Рассказать друзьям  —
-		+e.A.item--vk.--share(href="#" target="_blank")
+		+e.A.item--vk.--share(href="https://vk.com/share.php?url=[LINK]" target="_blank" onclick="return Share.me(this);")
 			+icon('vk')
-		+e.A.item--fb.--share(href="#" target="_blank")
+		+e.A.item--fb.--share(href="http://www.facebook.com/sharer/sharer.php?s=100&p%5Btitle%5D=[TITLE]&p%5Bsummary%5D=[TEXT]&p%5Burl%5D=[LINK]&p%5Bimages%5D%5B0%5D=[IMAGE]" target="_blank" onclick="return Share.me(this);")
 			+icon('fb')
 mixin soc4()
 	+b.soc--share
