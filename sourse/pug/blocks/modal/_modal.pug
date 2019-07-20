@@ -32,15 +32,57 @@ mixin modal()
 	//- 			.h3 Скоро с Вами свяжутся
 	//- 			br 
 
-	+form-wrap()(id="modal-call" class="zoom-anim-dialog mfp-hide modal-win modal-form" )
+	+form-wrap()(id="modal-inner" class="zoom-anim-dialog mfp-hide modal-win modal-form modal-sm" )
 		.text-center
-			+e.title.h3.ttu Обратный звонок
-			p Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течении 15&nbsp;минут
-		+input("text","Ваше Имя")(required) 
-		+input("tel","Ваш телефон")(required)
+			+e.title.h3.ttu войти 
+		+input("tel","Телефон")(required)
+		+input("eamil","E-mail")(required) 
 		//- +input("email","Ваше email")(required)
 		//- +text( "Комментарий")
-		+e.INPUT.btn.btn.btn-block.btn-warning.mb-4(type="submit" value="Рассчитать") 
-		+polite()
-	// #modal-call
+		+e.btn--modal.--sm(type="submit") войти 
+	// #modal-inner
+	
+	+form-wrap()(id="modal-sponsor" class="zoom-anim-dialog mfp-hide modal-win modal-form modal-lg" )
+		.text-center
+			+e.title.h3.ttu Хочу стать спонсором
+		.row
+			.col-auto
+				+in-rad('face')
+					+e.STRONG.text.ttu физическо лицо
+			
+			.col-auto
+				+in-rad('face')
+					+e.STRONG.text.ttu Организация
+			
+		.row 
+			.col-lg-6
+				+input('text','Название организации или ФИО')
+			.col-lg-6
+				+select('Вид спонсорской помощи')
+					option Вид спонсорской помощи 1
+					option Вид спонсорской помощи 12
+					option Вид спонсорской помощи 13
+			.col-lg-6
+				+input('tel','ТЕЛЕФОН')
+			.col-lg-6
+				+input('text','Мероприятие')
+			.col-lg-6
+				+input('email','E-MAIL ')
+			.col-lg-6
+				+input('text','Дата')(class="datepicker-date")
+		+ta('ВАШЕ СООБЩЕНИЕ')
+		+polite
+		+e.btn--lg-modal(type="submit") НАПИСАТЬ СООБЩЕНИЕ
+	// #modal-sponsor
+	
+	+form-wrap()(id="modal-alert" class="zoom-anim-dialog mfp-hide modal-win modal-form modal-sm" )
+		.text-center
+			+e.title.h3.ttu Сообщение отправлено
+			p  В ближайшее время с Вами свяжутся.
+	// #modal-alert
+	+b.form-wrap(id="modal-table" class="zoom-anim-dialog mfp-hide modal-win modal-form modal-md" )
+		.text-center
+			img.res-i(src="img/table.jpg", alt="")
+	// #modal-table
+
 	// modal

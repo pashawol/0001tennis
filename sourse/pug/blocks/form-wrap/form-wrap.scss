@@ -87,6 +87,20 @@
 		 @extend .btn-primary;
 		 @extend .btn-block;
 		 margin-top: rem(25);
+		 &--sm{
+
+			 width: rem(143);
+		 }
+		 &--modal{
+			//  display: inline-block;
+			margin-left: auto;
+			margin-right: auto;
+		 }
+	 }
+	 .form-wrap__btn--lg-modal{
+		margin-left: auto;
+		margin-right: auto;
+		max-width: rem(292);
 	 }
 	 &--lg  .form-wrap__polite{
 		margin-left: auto;

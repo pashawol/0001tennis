@@ -199,6 +199,12 @@
             </li>
             <li class="mb-2"><a href="03-news-page2.html">Новость 2val</a></li>
           </ol>
+          <ul>
+            <li> <a class="text-body tdu popup-with-move-anim" href="#modal-inner">Войти  </a></li>
+            <li> <a class="text-body tdu popup-with-move-anim" href="#modal-alert">спасибо</a></li>
+            <li> <a class="text-body tdu popup-with-move-anim" href="#modal-sponsor">Хочу стать спонсором</a></li>
+            <li> <a class="text-body tdu popup-with-move-anim" href="#modal-table">таблица</a></li>
+          </ul>
         </div>
       </div>
       <footer class="footer block-with-lazy">
@@ -224,7 +230,7 @@
                   <div class="col"><img class="res-i lazy" src="#" data-src="img/logo.png" alt=""/></div>
                   <div class="col-auto">©2019 Национальная академия тенниса РБ<br/>ВСЕ ПРАВА ЗАЩИЩЕНЫ
                     <div class="row">
-                      <div class="col-left col-auto"><a class="text-body tdu" href="#">Войти на сайт</a></div>
+                      <div class="col-left col-auto"><a class="text-body tdu popup-with-move-anim" href="#modal-inner">Войти на сайт</a></div>
                       <div class="col-auto"><a class="text-body tdu" href="#">Документы</a></div>
                     </div>
                   </div>
@@ -255,27 +261,104 @@
         </div>
       </footer>
     </div>
-    <div class="form-wrap zoom-anim-dialog mfp-hide modal-win modal-form" id="modal-call">
+    <div class="form-wrap zoom-anim-dialog mfp-hide modal-win modal-form modal-sm" id="modal-inner">
       <form>
         <div class="text-center">
-          <div class="form-wrap__title h3 ttu">Обратный звонок
+          <div class="form-wrap__title h3 ttu">войти 
           </div>
-          <p>Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течении 15&nbsp;минут</p>
         </div>
-        <div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="text" placeholder="Ваше Имя" required="required"/>
+        <div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="tel" placeholder="Телефон" required="required"/>
         </div>
         <!-- +e.input-wrap-->
-        <div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="tel" placeholder="Ваш телефон" required="required"/>
+        <div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="eamil" placeholder="E-mail" required="required"/>
         </div>
-        <!-- +e.input-wrap--><input class="form-wrap__btn btn btn-block btn-warning mb-4" type="submit" value="Рассчитать"/>
+        <!-- +e.input-wrap-->
+        <button class="form-wrap__btn form-wrap__btn--modal form-wrap__btn--sm" type="submit">войти 
+        </button>
+      </form>
+    </div>
+    <!-- #modal-inner-->
+    <div class="form-wrap zoom-anim-dialog mfp-hide modal-win modal-form modal-lg" id="modal-sponsor">
+      <form>
+        <div class="text-center">
+          <div class="form-wrap__title h3 ttu">Хочу стать спонсором
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-auto">
+            <label class="custom-input"><input class="custom-input__input" type="radio" name="face"/><span class="custom-input__lab"></span><strong class="custom-input__text ttu">физическо лицо</strong>
+            </label>
+          </div>
+          <div class="col-auto">
+            <label class="custom-input"><input class="custom-input__input" type="radio" name="face"/><span class="custom-input__lab"></span><strong class="custom-input__text ttu">Организация</strong>
+            </label>
+          </div>
+        </div>
+        <div class="row"> 
+          <div class="col-lg-6">
+            <div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="text" placeholder="Название организации или ФИО"/>
+            </div>
+            <!-- +e.input-wrap-->
+          </div>
+          <div class="col-lg-6">
+            <div class="form-wrap__input-wrap form-group">
+              <select class="form-wrap__input form-control">
+                <option class="d-none" disabled="disabled" selected="selected">Вид спонсорской помощи</option>
+                <option>Вид спонсорской помощи 1</option>
+                <option>Вид спонсорской помощи 12</option>
+                <option>Вид спонсорской помощи 13</option>
+              </select>
+            </div>
+            <!-- +e.input-wrap-->
+          </div>
+          <div class="col-lg-6">
+            <div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="tel" placeholder="ТЕЛЕФОН"/>
+            </div>
+            <!-- +e.input-wrap-->
+          </div>
+          <div class="col-lg-6">
+            <div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="text" placeholder="Мероприятие"/>
+            </div>
+            <!-- +e.input-wrap-->
+          </div>
+          <div class="col-lg-6">
+            <div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="email" placeholder="E-MAIL "/>
+            </div>
+            <!-- +e.input-wrap-->
+          </div>
+          <div class="col-lg-6">
+            <div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control datepicker-date" type="text" placeholder="Дата"/>
+            </div>
+            <!-- +e.input-wrap-->
+          </div>
+        </div>
+        <div class="form-wrap__input-wrap form-group"><textarea class="form-wrap__input form-control" placeholder="ВАШЕ СООБЩЕНИЕ"></textarea>
+        </div>
+        <!-- +e.input-wrap-->
         <div class="form-wrap__polite">
           <label class="custom-input"><input class="custom-input__input" type="checkbox" checked="checked"/><span class="custom-input__lab"></span><small class="custom-input__text">
             Я даю <a class="tdu" href="#">согласие на обработку персональных данных</a></small>
           </label>
         </div>
+        <button class="form-wrap__btn form-wrap__btn--lg-modal" type="submit">НАПИСАТЬ СООБЩЕНИЕ
+        </button>
       </form>
     </div>
-    <!-- #modal-call-->
+    <!-- #modal-sponsor-->
+    <div class="form-wrap zoom-anim-dialog mfp-hide modal-win modal-form modal-sm" id="modal-alert">
+      <form>
+        <div class="text-center">
+          <div class="form-wrap__title h3 ttu">Сообщение отправлено
+          </div>
+          <p> В ближайшее время с Вами свяжутся.</p>
+        </div>
+      </form>
+    </div>
+    <!-- #modal-alert-->
+    <div class="form-wrap zoom-anim-dialog mfp-hide modal-win modal-form modal-md" id="modal-table">
+      <div class="text-center"><img class="res-i" src="img/table.jpg" alt=""/></div>
+    </div>
+    <!-- #modal-table-->
     <!-- modal-->
     <script src="js/jquery.min.js"></script>
     <!-- modal libs-->

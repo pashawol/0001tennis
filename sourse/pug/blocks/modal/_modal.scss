@@ -1,12 +1,32 @@
 .modal-win {
 	display: block;
 	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	.form-wrap__title{
+		margin-bottom: rem(40);
+	}
+	padding: rem(70) rem(60);
 	.modal-content {
 		// max-width: 485px;
 		// padding-right: 40px 15px;
 	}
- 
+ .form-wrap__polite{
+	 margin-left: auto;
+	 margin-right: auto;
+	 max-width: rem(370);
+ }
 }
+.modal-sm{
+	max-width: 574px;
+}
+.modal-lg{
+	max-width: 1185px;
+}
+
+	.modal-md{
+		max-width: 725px;
+	}
 
 a {
 	outline: 0 !important;
@@ -40,7 +60,9 @@ a {
 	}
 }
 
-
+.mfp-close{
+	font-size: 40px;
+}
 // 
 @include media-breakpoint-up(xl) {}
 
