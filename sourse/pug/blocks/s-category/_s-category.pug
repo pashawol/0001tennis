@@ -52,3 +52,23 @@ mixin s-category-13()
 			+item('3','ТРЕНЕРЫ','#86b852')
 			+item('4','СПОРТСМЕНЫ','#5c3674')
 	// end s-category
+mixin s-category-19()
+	// start s-category
+	+b.s-category 
+		block
+		.row
+			mixin item(i,t, color)
+				+e.col.col-md-6
+					+e.item.img-bg(href='#')
+						img.lazy-bg(src="#" data-src=`img/category-${i}.jpg`, alt="")
+						+e.DIV.title= t
+							.before(style=`background-color: ${color};`)
+				// /+e.col.col-md-6
+			+item('1','Мастер-классы','#5c3674')
+			+item('2','Открытые уроки','#28a8a6')
+			+item('3','Курсы повышения квалификации тренеров','#86b852')
+			+item('4','Стажировки','#5c3674')
+			+item('4','Тренинги','#5c3674')
+			+item('2','Мастер-классы по питанию','#28a8a6')
+			+item('2','Психологические тренинги','#28a8a6')
+	// end s-category

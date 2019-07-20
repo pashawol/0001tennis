@@ -54,6 +54,9 @@ jQuery(document).ready(function ($) {
  	var icon2 = '<svg width="89" height="22" viewBox="0 0 89 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M79.0918 21.2302C78.7441 21.5717 78.0488 21.5717 77.5273 21.2302C77.1797 20.8888 77.1797 20.2058 77.5273 19.6937L85.3496 12.0107L1.04297 12.0107C0.521485 12.1815 8.58236e-07 11.6693 9.03013e-07 11.1571C9.47791e-07 10.6449 0.521485 10.1327 1.04297 10.1327L85.3496 10.1327L77.5273 2.44975C77.1797 2.10829 77.1797 1.42536 77.5273 0.913167C77.875 0.571704 78.5703 0.571704 79.0918 0.913167L88.6523 10.3034C89 10.6449 89 11.3278 88.6523 11.84L79.0918 21.2302Z" fill="#1E201D" fill-opacity="0.3"/>';
 
 	
+ 	var icon4 = '<svg width="15" height="29" viewBox="0 0 15 29" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.2 1.77539L13.8 14.5158L1.2 27.2244" stroke="black" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+	
 
 	var arrl2 = (' <div class="r">' + icon),
 		arrr2 = (' <div class="l">' + icon);
@@ -62,7 +65,11 @@ jQuery(document).ready(function ($) {
 		arrr3 = (' <div class="l">' + icon2);
 	// карусель
 	
-	$('.header-block__slider--js').slick({
+	var arrl4 = (' <div class="r">' + icon4),
+		arrr4 = (' <div class="l">' + icon4);
+	// карусель
+	
+	$('.header-block__slider--js ').slick({
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		dots: false,
@@ -72,6 +79,18 @@ jQuery(document).ready(function ($) {
 		prevArrow: arrr2,
 		nextArrow: arrl2,
 	});
+	
+	$(' .slider--js').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		dots: false,
+		speed: 500, 
+		loop: true,
+		arrows: true, 
+		prevArrow: arrr4,
+		nextArrow: arrl4,
+	});
+	
 	$('.s-logos__slider--js').slick({
 		slidesToShow: 2,
 		slidesToScroll: 1, 
@@ -402,7 +421,8 @@ JSCCommon = {
 
 					setTimeout(function () {
 						lazyImages.forEach(function (lazyImage) {
-							if (((lazyImage.getBoundingClientRect().top - lazyImage.closest(".block-with-lazy").clientHeight * 2) <= window.innerHeight && (lazyImage.getBoundingClientRect().bottom + lazyImage.closest(".block-with-lazy").clientHeight * 2) >= 0) && getComputedStyle(lazyImage).display !== "none") {
+							var imgWrapper = lazyImage.parentNode.clientHeight + 500;
+							if (((lazyImage.getBoundingClientRect().top - imgWrapper) <= window.innerHeight && (lazyImage.getBoundingClientRect().bottom + imgWrapper) >= 0) && getComputedStyle(lazyImage).display !== "none") {
 								lazyImage.src = lazyImage.dataset.src;
 								// lazyImage.srcset = lazyImage.dataset.srcset;
 								lazyImage.classList.remove("lazy");
@@ -443,7 +463,8 @@ JSCCommon = {
 
 					setTimeout(function () {
 						lazyImages.forEach(function (lazyImage) {
-							if (((lazyImage.getBoundingClientRect().top - lazyImage.closest(".block-with-lazy").clientHeight * 2) <= window.innerHeight && (lazyImage.getBoundingClientRect().bottom + lazyImage.closest(".block-with-lazy").clientHeight * 2) >= 0) && getComputedStyle(lazyImage).display !== "none") {
+							var imgWrapper = lazyImage.parentNode.clientHeight + 500;
+							if (((lazyImage.getBoundingClientRect().top - imgWrapper) <= window.innerHeight && (lazyImage.getBoundingClientRect().bottom + imgWrapper) >= 0) && getComputedStyle(lazyImage).display !== "none") {
 								lazyImage.parentElement.style.backgroundImage = 'url(' + lazyImage.dataset.src + ')';
 								lazyImage.src = lazyImage.dataset.src;
 								// lazyImage.srcset = lazyImage.dataset.srcset;

@@ -51,6 +51,8 @@
 		justify-content: center;
 		.icon{
 			font-size: .8em;
+			position: relative;
+			top: rem(-1);
 			&:first-child{
 				margin-left: rem(15);
 			}

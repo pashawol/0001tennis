@@ -1,13 +1,13 @@
  .soc {
  	display: flex;
  	align-items: center;
- 	margin-left: rem(-7);
- 	margin-right: rem(-7);
+ 	margin-left: rem(-10);
+ 	margin-right: rem(-10);
  	flex-wrap: wrap;
 
  	>* {
- 		margin-left: rem(7);
- 		margin-right: rem(7);
+ 		margin-left: rem(10);
+ 		margin-right: rem(10);
  	}
 
  	&__item {
@@ -15,7 +15,7 @@
 		cursor: pointer;
  		.icon {
  			color: $body-color;
-			 font-size: rem(20);
+			 font-size: rem(18);
 			 @include mt;
  		}
 

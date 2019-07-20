@@ -8,13 +8,18 @@ html {
 		overflow: hidden;
 	}
 	// @include media-breakpoint-up(sm) {
+		
+		// 	margin-left: calc(100vw - 100%);
+		// 	margin-right: 0;
+		// }
+		
+		// background-image: url(../1.png);
 
-	// 	margin-left: calc(100vw - 100%);
-	// 	margin-right: 0;
-	// }
-
-	// background-image: url(../screen/main.jpg);
 }
+body{
+	// opacity: 0.7;
+}
+
 .screen{ 
 	top: 0;
 	@include a-cent(x);

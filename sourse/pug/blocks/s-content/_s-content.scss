@@ -3,6 +3,32 @@
 
 }
 .s-content {
+	&__slider{
+		.slick-arrow{
+			width: rem(69px);
+			height: rem(69px);
+			text-align: center;
+			line-height: rem(68);
+			vertical-align: middle;
+			background-color: #fff;
+			border-radius: 50%;
+			svg{
+				width: rem(12);
+			}
+			&.l{
+				left: rem(20);
+				svg{
+					margin-left: rem(-3);
+				}
+			}
+			&.r{
+				right: rem(20);
+				svg{
+					margin-left: rem(3);
+				}
+			}
+		}
+	}
 	img{
 		margin-bottom: 2rem;
 	}
@@ -11,6 +37,24 @@
 		margin-left: auto;
 		margin-right: auto;
 		max-width: 954px;
+		@include clearfix;
+	}
+	.fl{
+		margin-bottom: 1rem;
+		@extend .res-i;
+		@include media-breakpoint-up(sm) {
+
+			&--left{
+				float: left;
+				margin-right: 1.5rem;
+			}
+			
+			&--right{
+				float: right;
+				margin-left: 1.5rem;
+			}
+		}
+
 	}
 	.container{
 	}
